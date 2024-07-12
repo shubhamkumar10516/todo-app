@@ -5,7 +5,7 @@ import CounterClassComp from './Components/Counter/CounterClassComp';
 function App() {
   return (
     <div className="App">
-        <CounterClassComp/>
+       <Counter/>
     </div>
   );
 }

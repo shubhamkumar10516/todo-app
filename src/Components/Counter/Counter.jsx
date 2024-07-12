@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import './Counter.css';
 
 const Counter = () =>{
-    //const [count, setCount] 
+    const [counter, setCounter] = useState(0);
     const increment = () => {
-        console.log("increment");
+       setCounter(counter+1);
     };
     return(
         <div className="counter">
             <button onClick={increment}>+1</button>
-            <span className='count'>0</span>
+            <span className='count'>{counter}</span>
         </div>
     );
 };

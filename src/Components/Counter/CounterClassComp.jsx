@@ -8,6 +8,7 @@ class CounterClassComp extends Component {
     this.state = {
         counter:0
     };
+    this.increment = this.increment.bind(this);
   }  
   increment = () => {
     console.log("increment");
