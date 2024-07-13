@@ -1,31 +1,27 @@
 import { Component } from 'react';
+import PropsTypes from 'prop-types';
 import './Counter.css';
 
 class CounterClassComp extends Component {
+    
   
-  constructor(){
-    super();
-    this.state = {
-        counter:0
-    };
-    this.increment = this.increment.bind(this);
-  }  
   increment = () => {
-    console.log("increment");
-    //this.state.counter++;
-    this.setState({ counter: this.state.counter + 1 });
+    this.props.increment(this.props.count);
   };
-
-  render() {
+  
+  render = () => {
+   
     return (
       <div className="counter">
-        <button onClick={this.increment}>+1</button>
-        <span className="count">{this.state.counter}</span>
+        <button onClick={this.increment}>{this.props.count < 0? '':'+'}{this.props.count}</button>
       </div>
     );
   }
+  
 };
 
-
+CounterClassComp.defaultProps = {
+    count:1
+};
 export default CounterClassComp;
 
